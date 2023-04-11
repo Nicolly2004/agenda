@@ -3,10 +3,11 @@ import { Button } from "../Button";
 import { FaTrashAlt, FaCheck } from "react-icons/fa";
 import "./style.css";
 
-interface itemListProps extends TaskProps{}
+interface itemListProps {
+ task:TaskProps
+}
 
-
-export const ItemList: React.FC<itemListProps> = ({titulo, data, status}) => {
+export const ItemList: React.FC<itemListProps> = ({task: {titulo, data, status}}) => {
     return (
         <div className="list-item"> 
               <span className="titulo">{titulo}</span>
